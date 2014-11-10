@@ -1,0 +1,4 @@
+name: "Package Template"
+url: "http://localhost:4000"
+markdown: redcarpet
+permalink: pretty
