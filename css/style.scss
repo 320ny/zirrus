@@ -1,0 +1,311 @@
+---
+# ensure Jekyll properly reads file.
+---
+{% include normalize.min.css %}
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+
+/* ----------------------------------------
+  
+  GLOBAL
+
+---------------------------------------- */
+/* allows inline CSS statments for media queries */
+@mixin respond-to($breakpoint) {
+  @media only screen and (min-width: $breakpoint + px) { @content; }
+}
+$link-color: #0455BF;
+.container {
+  @include outer-container;
+  padding: 0 3%; 
+}
+body {
+  font-size: 14px;
+  font-family: arial, sans-serif;
+  /* RESPONSIVE */
+  @include respond-to(768) {
+    font-size: 16px;
+  }
+}
+img {
+  max-width: 100%;
+}
+a {
+  img {
+    vertical-align: middle;
+  }
+  color: $link-color;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+  line-height: 1.25em;
+  color: #222;
+}
+h1 {
+  font-size: 3em;
+}
+h2 {
+  font-size: 2.25em;
+}
+h3 {
+  font-size: 1.75em;
+}
+h4 {
+  font-size: 1.125em;
+}
+h5 {
+  font-size: 1em;
+}
+h6 {
+  font-size: 1em;
+}
+p {
+  line-height: 1.7;
+  font-size: 1.2em;
+  color: #333;
+}
+
+
+/* ----------------------------------------
+  
+  HEADER
+
+---------------------------------------- */
+header {
+  padding: 1% 0;
+  margin-bottom: 1%;
+  border-bottom: 1px solid #ccc;
+  nav {
+    @include span-columns(12);
+    .logo {
+      @include span-columns(4);
+      /* RESPONSIVE */
+      @include respond-to(768) {
+        @include span-columns(2);
+      }
+    }
+    .mobile-menu {
+      @include span-columns(4);
+      @include shift(4);
+      @include omega();
+      display: block;
+      padding: 4%;
+      border: none;
+      background: none;
+      color: #333;
+      font-size: 1.2em;
+      &:focus {
+        outline: none;
+      }
+      /* RESPONSIVE */
+      @include respond-to(768) {
+        display: none;
+      }
+    }
+    .link-list {
+      @include span-columns(12);
+      display: none;
+      margin: 2% 0 0;
+      padding: 0;
+      text-align: right;
+      /* RESPONSIVE */
+      @include respond-to(768) {
+        @include span-columns(10);
+        display: block !important;
+      }
+      li {
+        display: block;
+        margin: 1% 0 2%;
+        text-align: center;
+        /* RESPONSIVE */
+        @include respond-to(768) {
+          display: inline-block;
+          margin: 0 0 0 7%;
+          text-align: right;
+        }
+        a {
+          display: block;
+          padding: 4% 0;
+          font-size: 1.1em;
+          color: #fff;
+          background: #333;
+          text-decoration: none;
+          &:hover {
+            opacity: .8;
+          }  
+          /* RESPONSIVE */
+          @include respond-to(768) {
+            color: $link-color;
+            background: inherit;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ----------------------------------------
+  
+  INDEX
+
+---------------------------------------- */
+.index {
+  h1,
+  h2,
+  h3 {
+    @include span-columns(12);
+    text-align: center;
+  }
+  p {
+    @include span-columns(12);
+    @include shift(0);
+    /* RESPONSIVE */
+    @include respond-to(768) {
+      @include span-columns(8);
+      @include shift(2);
+    }
+  }
+}
+
+
+/* ----------------------------------------
+  
+  FOOTER
+
+---------------------------------------- */
+footer {
+  padding: 3% 0 1%;
+  margin-top: 3%;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  nav {
+    @include span-columns(12);
+    .logo {
+      @include span-columns(4);
+      @include shift(4);
+      /* RESPONSIVE */
+      @include respond-to(768) {
+        @include span-columns(2);
+        @include shift(5);
+      }
+    }
+    ul {
+      @include span-columns(12);
+      margin: 5% 0;
+      padding: 0;
+      text-align: center;
+      /* RESPONSIVE */
+      @include respond-to(768) {
+        margin: 3% 0;
+      }
+      li {
+        display: inline-block;
+        margin: 0 3%;
+        /* RESPONSIVE */
+        @include respond-to(768) {
+          margin: 0 2.5%;
+        }
+        a {
+          display: inline-block;
+          padding: 15px 5px;
+          font-size: 1.1em;
+        }
+      }
+    }
+  }
+  .social {
+    ul {
+      @include span-columns(12);
+      padding: 0;
+      margin: 0 0 3%;
+      li {
+        display: inline-block;
+        margin: 0 1%;
+        i {
+          font-size: 2em;
+        }
+        a {
+          &:hover {
+            opacity: .8;
+          }
+        }
+        .facebook {
+          color: #3b5998;
+        }
+        .twitter {
+          color: #00aced;
+        }
+        .linkedin {
+          color: #007bb6;
+        }
+      }
+    }
+  }
+  .copyright {
+    font-size: .7em;
+    color: #999;
+  }
+}
+
+
+
+/* ----------------------------------------
+  
+  PRINT
+
+---------------------------------------- */
+@media print {
+  * {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+  }
+  a,
+  a:visited {
+      text-decoration: underline;
+  }
+  a[href]:after {
+      content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+      content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+      content: "";
+  }
+  pre,
+  blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+  }
+  thead {
+      display: table-header-group;
+  }
+  tr,
+  img {
+      page-break-inside: avoid;
+  }
+  @page {
+      margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+      orphans: 3;
+      widows: 3;
+  }
+  h2,
+  h3 {
+      page-break-after: avoid;
+  }
+}
