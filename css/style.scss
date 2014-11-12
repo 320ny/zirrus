@@ -57,7 +57,7 @@ h6 {
   font-weight: 700;
 }
 h1 {
-  font-size: 2.75em;
+  font-size: 2.5em;
 }
 h2 {
   font-size: 2.25em;
@@ -66,7 +66,7 @@ h3 {
   font-size: 1.75em;
 }
 h4 {
-  font-size: 1.125em;
+  font-size: 1.25em;
 }
 h5 {
   font-size: 1em;
@@ -108,7 +108,7 @@ strong {
 header {
   padding: 1% 0;
   border-bottom: 1px solid #ccc;
-  background: url("/img/shattered.png");
+  background: url("{{ site.baseurl}}/img/shattered.png");
   nav {
     @include span-columns(12);
     .logo {
@@ -139,7 +139,7 @@ header {
     .link-list {
       @include span-columns(12);
       display: none;
-      margin: 3% 0 0;
+      margin: 2% 0 0;
       padding: 0;
       text-align: right;
       /* RESPONSIVE */
@@ -159,7 +159,7 @@ header {
         }
         a {
           display: block;
-          padding: 4% 0;
+          padding: 10% 0;
           font-size: 1.1em;
           color: #fff;
           background: #333;
@@ -185,31 +185,32 @@ header {
 
 ---------------------------------------- */
 .index {
-  .opening-copy {
+  .opening-banner {
     position: relative;
-    .copy {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
     img {
       width: 100%;
+      vertical-align: middle;
     }
     h1 {
-      width: 65%;
-      margin: 3% auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 850px;
+      margin-left: -425px;
+      margin-top: -50px;
       text-align: center;
       color: #fff;
+      text-shadow: 0 1px 3px #000;
     }
-    p {
-      width: 57%;
-      margin: 0 auto;      
-      color: #fff;
-    }
+  }
+  .opening-copy {
+    @include span-columns(8);
+    @include shift(2);
+    margin-top: 3.5%;
+    margin-bottom: 3.5%;
   }
   .product-teaser-wrapper {
     @include span-columns(12);
-    margin-top: 3%;
     .product-teaser {
       @include span-columns(6);
       margin-bottom: 2.5%;
@@ -231,7 +232,7 @@ header {
         }
       }
       p {
-        padding: 0 4%;
+        padding: 0 15%;
         font-size: .95em;
         text-align: left;
         color: #666;
@@ -256,7 +257,7 @@ footer {
   margin-top: 3%;
   text-align: center;
   border-top: 1px solid #ccc;
-  background: url("/img/shattered.png");
+  background: url("{{ site.baseurl}}/img/shattered.png");
   nav {
     @include span-columns(12);
     .logo {

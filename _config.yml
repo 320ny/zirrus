@@ -1,4 +1,6 @@
 name: "Zirrus Group"
 url: "http://localhost:4000"
+baseurl: /zirrus
 markdown: redcarpet
 permalink: pretty
+encoding: "utf-8"
