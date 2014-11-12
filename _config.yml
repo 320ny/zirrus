@@ -4,5 +4,3 @@ baseurl: /zirrus
 markdown: redcarpet
 permalink: pretty
 encoding: "utf-8"
-
-Encoding.default_external = "utf-8"
