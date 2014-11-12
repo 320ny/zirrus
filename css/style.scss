@@ -107,7 +107,6 @@ strong {
 ---------------------------------------- */
 header {
   padding: 1% 0;
-  margin-bottom: 1%;
   border-bottom: 1px solid #ccc;
   background: url("/img/shattered.png");
   nav {
@@ -187,18 +186,25 @@ header {
 ---------------------------------------- */
 .index {
   .opening-copy {
+    position: relative;
+    .copy {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    img {
+      width: 100%;
+    }
     h1 {
-      @include span-columns(12);
+      width: 65%;
+      margin: 3% auto;
       text-align: center;
+      color: #fff;
     }
     p {
-      @include span-columns(12);
-      @include shift(0);
-      /* RESPONSIVE */
-      @include respond-to(768) {
-        @include span-columns(8);
-        @include shift(2);
-      }
+      width: 57%;
+      margin: 0 auto;      
+      color: #fff;
     }
   }
   .product-teaser-wrapper {
