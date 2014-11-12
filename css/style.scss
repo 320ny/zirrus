@@ -1,8 +1,6 @@
 ---
 # ensure Jekyll properly reads file.
 ---
-@charset "UTF-8";
-
 {% include normalize.min.css %}
 @import "bourbon/bourbon";
 @import "neat/neat";
