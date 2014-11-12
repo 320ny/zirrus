@@ -108,7 +108,7 @@ strong {
 header {
   padding: 1% 0;
   border-bottom: 1px solid #ccc;
-  background: url("/img/shattered.png");
+  background: url("{{ site.baseurl}}/img/shattered.png");
   nav {
     @include span-columns(12);
     .logo {
@@ -256,7 +256,7 @@ footer {
   margin-top: 3%;
   text-align: center;
   border-top: 1px solid #ccc;
-  background: url("/img/shattered.png");
+  background: url("{{ site.baseurl}}/img/shattered.png");
   nav {
     @include span-columns(12);
     .logo {
