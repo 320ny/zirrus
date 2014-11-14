@@ -39,10 +39,14 @@ img {
   max-width: 100%;
 }
 a {
+  color: $accent-color-1;
+  &:hover {
+    color: $accent-color-1;
+    opacity: .8;
+  }
   img {
     vertical-align: middle;
   }
-  color: $accent-color-1;
 }
 h1,
 h2,
@@ -74,6 +78,10 @@ h5 {
 h6 {
   font-size: 1em;
 }
+ul {
+  padding: 0;
+  margin: 0;
+}
 p {
   line-height: 1.7;
   font-size: 1.1em;
@@ -84,8 +92,10 @@ strong {
 }
 .btn {
   display: inline-block;
-  background: $accent-color-2;
+  width: 100%;
   padding: 20px 15px;
+  text-align: center;
+  background: $accent-color-2;
   border-radius: 5px;
   color: #fff;
   text-decoration: none;
@@ -96,8 +106,44 @@ strong {
   &:hover {
     @include transition;
     opacity: .8;
+    color: #fff;
   }
 }
+hr {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 0;
+  border-bottom: 0;
+  border-top: 1px solid #ccc;
+}
+.contact-info {
+  @include span-columns(12);
+  text-align: center;
+  ul {
+    margin-bottom: 0;
+    li {
+      display: inline-block;
+      margin: 0 1.5%;
+      font-size: 1.4em;
+      color: $accent-color-1;
+      font-family: 'Bitter', serif;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .linkedin {
+        font-size: 2em;
+        vertical-align: sub;
+        i {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
 
 
 /* ----------------------------------------
@@ -179,6 +225,7 @@ header {
   }
 }
 
+
 /* ----------------------------------------
   
   INDEX
@@ -208,12 +255,16 @@ header {
     @include shift(2);
     margin-top: 3.5%;
     margin-bottom: 3.5%;
+    p {
+      font-size: 1.2em;
+      text-align: center;
+    }
   }
   .product-teaser-wrapper {
     @include span-columns(12);
     .product-teaser {
       @include span-columns(6);
-      margin-bottom: 2.5%;
+      margin-bottom: 2.35765%;
       padding-top: 2%;
       text-align: center;
       border: 3px solid $accent-color-1;
@@ -234,7 +285,6 @@ header {
       p {
         padding: 0 15%;
         font-size: .95em;
-        text-align: left;
         color: #666;
       }
       .btn {
@@ -249,12 +299,144 @@ header {
 
 /* ----------------------------------------
   
+  BRAND PAGES
+
+---------------------------------------- */
+.brand-page {
+  margin-top: 7%;
+  @include span-columns(12);
+  .brand-logo-wrapper {
+    @include span-columns(4);
+    @include shift(4);
+  }
+  hr {
+    @include span-columns(12);
+    margin-top: 4%;
+    margin-bottom: 3%;
+  }
+  h1 {
+    @include span-columns(12);
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+  }
+  p {
+    @include span-columns(8);
+    @include shift(2);
+    margin-top: 3%;
+    margin-bottom: 4%;
+  }
+  .btn {
+    @include span-columns(6);
+    @include shift(3);
+    font-size: 1.3em;
+  }
+}
+
+
+
+/* ----------------------------------------
+  
+  ABOUT
+
+---------------------------------------- */
+.about {
+  @include span-columns(12);
+  margin-top: 7%;
+  .about-copy {
+    @include span-columns(12);
+    .case-study {
+      @include span-columns(4);
+      @include omega();
+      padding: 2%;
+      border: 3px solid $accent-color-1;
+      .btn {
+        margin-bottom: 5%;
+        i {
+          margin-right: 5px;
+          font-size: 1.5em;
+          vertical-align: middle;
+        }
+      }
+    }
+    p {
+      @include span-columns(8);
+      margin-top: 0;
+      margin-bottom: 0;
+      font-style: italic;
+      color: #999;
+    }
+    hr {
+      @include span-columns(12);
+    }
+  }
+  hr {
+  }
+  .bios-wrapper {
+    .bio {
+      @include span-columns(12);
+      margin-bottom: 10%;
+      .bio-img {
+        @include span-columns(5);
+        h3 {
+          margin-top: 5%;
+          text-align: center;
+          font-size: 1.6em;
+          span {
+            color: #999;
+          }
+        }
+        img {
+          display: inline-block;
+          border: 1px solid #aaa;
+          border-radius: 50%;
+          box-shadow: 0 0 1px #aaa;
+          -webkit-box-shadow: 0 0 1px #aaa;
+        }
+      }
+      .bio-copy {
+        @include span-columns(7);
+        @include omega();
+        p {
+          margin-top: 1%;
+        }
+      }
+    }
+  }
+}
+
+
+/* ----------------------------------------
+  
+  CONTACT
+
+---------------------------------------- */
+.contact {
+  @include span-columns(12);
+  margin-top: 5%;
+  h1 {
+    @include span-columns(12);
+    margin-bottom: 3%;
+    text-align: center;
+  }
+  form {
+    @include span-columns(6);
+    @include shift(3);
+    margin-top: 5%;
+    border-color: #ccc;
+    background: url("{{ site.baseurl}}/img/shattered.png");
+  }
+}
+
+
+/* ----------------------------------------
+  
   FOOTER
 
 ---------------------------------------- */
 footer {
   padding: 3% 0 1%;
-  margin-top: 3%;
+  margin-top: 10%;
   text-align: center;
   border-top: 1px solid #ccc;
   background: url("{{ site.baseurl}}/img/shattered.png");
@@ -293,41 +475,72 @@ footer {
       }
     }
   }
-  .social {
-    ul {
-      @include span-columns(12);
-      padding: 0;
-      margin: 0 0 3%;
-      li {
-        display: inline-block;
-        margin: 0 1%;
-        i {
-          font-size: 2em;
-        }
-        a {
-          font-size: 2em;
-          &:hover {
-            opacity: .8;
-          }
-        }
-        .facebook {
-          color: #3b5998;
-        }
-        .twitter {
-          color: #00aced;
-        }
-        .linkedin {
-          color: #007bb6;
-        }
-      }
-    }
-  }
   .copyright {
     font-size: .7em;
     color: #999;
   }
 }
 
+
+/* ----------------------------------------
+  
+  WUFOO
+
+---------------------------------------- */
+.wufoo {
+  border: 2px solid $accent-color-1;
+  padding: 3%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  span {
+    color: red;
+    font-size: 1.3em;
+  }
+  label {
+    display: block;
+    margin-bottom: 2%;
+    font-size: 1.1em;
+    font-weight: 700;
+  }
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    margin-bottom: 7%;
+    padding: 10px;
+    font-size: 1.1em;
+    font-family: 'Raleway', sans-serif;
+    border: 2px solid #ccc;
+    color: #666;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  input[type="text"],
+  input[type="email"] {
+    height: 50px;
+    &:focus {
+      outline-color: $accent-color-1; 
+    }
+  }
+  textarea {
+    height: 200px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    &:focus {
+      outline-color: $accent-color-1; 
+    }
+  }
+  button[type="submit"] {
+    margin-top: 3%;
+    border: none;
+    font-size: 1.3em;
+  }
+  .hide {
+    display: none;
+  }
+}
 
 
 /* ----------------------------------------
