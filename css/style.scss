@@ -231,7 +231,6 @@ header {
       .active {
         a {
           font-weight: 700;
-          border-bottom: 3px solid #fff;
           text-decoration: none;
         }
       }
@@ -298,6 +297,7 @@ header {
       }
       p {
         padding: 0 15%;
+        text-align: left;
         font-size: .95em;
         color: #666;
       }
