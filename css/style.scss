@@ -202,7 +202,7 @@ header {
         /* RESPONSIVE */
         @include respond-to(768) {
           display: inline-block;
-          margin: 0 0 0 4%;
+          margin: 0 0 0 5%;
           text-align: right;
         }
         a {
