@@ -143,6 +143,7 @@ hr {
       .linkedin {
         font-size: 2em;
         vertical-align: sub;
+        color: #007bb6;
         i {
           vertical-align: middle;
         }
@@ -349,22 +350,22 @@ header {
     margin-top: 2%;
     font-size: 1.3em;
   }
-  .brand-image {
+  .brand-asset {
     p {
       @include span-columns(7);
       @include shift(1);
       margin-top: 1%;
       margin-bottom: 4%;
     }
-    img {
+    .brand-img {
       @include span-columns(4);
       @include omega();
     }
     .cta {
-      @include span-columns(10);
+      @include span-columns(9);
       @include shift(0);
       margin-top: 5%;
-      font-size: 1.2em;
+      font-size: 1.1em;
     }
   }
   .d2g-mobile {
@@ -377,18 +378,6 @@ header {
   }
   .case-study {
     @include span-columns(12);
-    p {
-      @include span-columns(7);
-      @include shift(1);
-      margin-top: 1%;
-      margin-bottom: 4%;
-    }
-    .cta {
-      @include span-columns(10);
-      @include shift(0);
-      margin-top: 5%;
-      font-size: 1.2em;
-    }
     .case-study-container {
       @include span-columns(4);
       @include omega();
@@ -430,6 +419,7 @@ header {
       @include span-columns(4);
       @include omega();
       text-align: center;
+      color: #007bb6;
       i {
         font-size: 10em;
       }
