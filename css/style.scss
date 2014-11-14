@@ -24,14 +24,21 @@
 }
 $accent-color-1: #0D91D9;
 $accent-color-2: #224099;
+@mixin font-1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+@mixin font-2 {
+  font-family: 'Open Sans', serif;
+  font-weight: 400;
+}
 .container {
   @include outer-container;
   padding: 0 3%; 
 }
 body {
+  @include font-1;
   font-size: 14px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
   /* RESPONSIVE */
   @include respond-to(768) {
     font-size: 16px;
@@ -56,11 +63,10 @@ h3,
 h4,
 h5,
 h6 {
+  @include font-2;
   margin-bottom: 0;
   line-height: 1.25em;
   color: #222;
-  font-family: 'Bitter', serif;
-  font-weight: 700;
 }
 h1 {
   font-size: 2.5em;
@@ -93,6 +99,7 @@ strong {
   font-weight: 700;
 }
 .btn {
+  @include font-2;
   display: inline-block;
   width: 100%;
   padding: 20px 15px;
@@ -102,8 +109,6 @@ strong {
   color: #fff;
   text-decoration: none;
   font-size: 1.1em;
-  font-family: 'Bitter', serif;
-  font-weight: 700;
   -webkit-font-smoothing: antialiased;
   &:hover {
     @include transition;
@@ -124,11 +129,11 @@ hr {
   ul {
     margin-bottom: 0;
     li {
+      @include font-2;
       display: inline-block;
       margin: 0 1.5%;
       font-size: 1.4em;
       color: $accent-color-1;
-      font-family: 'Bitter', serif;
       a {
         text-decoration: none;
         &:hover {
@@ -202,12 +207,12 @@ header {
         /* RESPONSIVE */
         @include respond-to(768) {
           display: inline-block;
-          margin: 0 0 0 5%;
+          margin: 0 0 0 4%;
           text-align: right;
         }
         a {
           display: block;
-          padding: 10% 0 5%;
+          padding: 10% 0 4%;
           font-size: 1.1em;
           color: #fff;
           background: #333;
@@ -514,11 +519,11 @@ footer {
   input[type="email"],
   select,
   textarea {
+    @include font-1;
     width: 100%;
     margin-bottom: 7%;
     padding: 10px;
     font-size: 1.1em;
-    font-family: 'Raleway', sans-serif;
     border: 2px solid #ccc;
     color: #666;
     -webkit-box-sizing: border-box;
@@ -534,7 +539,6 @@ footer {
   }
   textarea {
     height: 200px;
-    font-family: 'Raleway', sans-serif;
     font-size: 1em;
     &:focus {
       outline-color: $accent-color-1; 
