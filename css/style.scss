@@ -394,6 +394,7 @@ header {
     @include span-columns(12);
     p {
       @include span-columns(8);
+      @include shift(2);
       margin-top: 0;
       margin-bottom: 0;
       font-style: italic;
