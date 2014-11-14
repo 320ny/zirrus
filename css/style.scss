@@ -207,7 +207,7 @@ header {
         }
         a {
           display: block;
-          padding: 10% 0;
+          padding: 10% 0 9%;
           font-size: 1.1em;
           color: #fff;
           background: #333;
@@ -221,6 +221,13 @@ header {
             background: inherit;
             text-decoration: underline;
           }
+        }
+      }
+      .active {
+        a {
+          font-weight: 700;
+          border-bottom: 3px solid #fff;
+          text-decoration: none;
         }
       }
     }
@@ -305,8 +312,8 @@ header {
 
 ---------------------------------------- */
 .brand-page {
-  margin-top: 7%;
   @include span-columns(12);
+  margin-top: 5%;
   .brand-logo-wrapper {
     @include span-columns(4);
     @include shift(4);
@@ -368,16 +375,14 @@ header {
       font-style: italic;
       color: #999;
     }
-    hr {
-      @include span-columns(12);
-    }
   }
   hr {
+    @include span-columns(12);
+    margin-top: 5%;
   }
   .bios-wrapper {
     .bio {
       @include span-columns(12);
-      margin-bottom: 10%;
       .bio-img {
         @include span-columns(5);
         h3 {
@@ -401,6 +406,7 @@ header {
         @include omega();
         p {
           margin-top: 1%;
+          margin-bottom: 0;
         }
       }
     }
