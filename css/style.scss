@@ -221,7 +221,8 @@ header {
           background: #333;
           text-decoration: none;
           &:hover {
-            opacity: .8;
+            color: #000;
+            opacity: 1;
           }  
           /* RESPONSIVE */
           @include respond-to(768) {
