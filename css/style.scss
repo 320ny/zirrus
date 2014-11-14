@@ -224,7 +224,6 @@ header {
           @include respond-to(768) {
             color: $accent-color-1;
             background: inherit;
-            text-decoration: underline;
           }
         }
       }
@@ -335,7 +334,7 @@ header {
   }
   h1 {
     @include span-columns(12);
-    margin-bottom: 0;
+    margin-bottom: 5%;
     margin-top: 0;
     text-align: center;
   }
@@ -348,7 +347,18 @@ header {
   .cta {
     @include span-columns(6);
     @include shift(3);
+    margin-top: 5%;
     font-size: 1.3em;
+  }
+  .brand-image {
+    p {
+      @include span-columns(8);
+      @include shift(0);
+    }
+    img {
+      @include span-columns(4);
+      @include omega();
+    }
   }
   .case-study {
     @include span-columns(4);
@@ -368,15 +378,9 @@ header {
   }
 }
 .consulting {
-  h1 {
-    margin-bottom: 5%;
-  }
   p {
     @include span-columns(8);
     @include shift(0);
-  }
-  .cta {
-    margin-top: 5%;
   }
 }
 
