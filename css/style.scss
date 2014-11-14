@@ -165,6 +165,8 @@ header {
   background: url("{{ site.baseurl}}/img/shattered.png");
   nav {
     @include span-columns(12);
+    @include font-2;
+    text-transform: uppercase;
     .logo {
       @include span-columns(4);
       /* RESPONSIVE */
@@ -208,13 +210,13 @@ header {
         /* RESPONSIVE */
         @include respond-to(768) {
           display: inline-block;
-          margin: 0 0 0 4%;
+          margin: 0 0 0 3%;
           text-align: right;
         }
         a {
           display: block;
           padding: 10% 0 4%;
-          font-size: 1.1em;
+          font-size: 1.05em;
           color: #fff;
           background: #333;
           text-decoration: none;
@@ -230,8 +232,7 @@ header {
       }
       .active {
         a {
-          font-weight: 700;
-          text-decoration: none;
+          color: #000;
         }
       }
     }
