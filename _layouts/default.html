@@ -15,7 +15,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Modernizr -->
-    <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="{{ site.baseurl}}/js/vendor/modernizr-2.6.2.min.js"></script>
 
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Bitter:700|Raleway:400,700' rel='stylesheet' type='text/css'>
@@ -29,12 +29,12 @@
           <a href="/" class="logo"><img src="{{ site.baseurl}}/img/logo.png" alt="Zirrus Group logo" title="Zirrus Group logo"></a>
           <button class="mobile-menu"><i class="fa fa-bars"></i>&nbsp; MENU</button>
           <ul class="link-list">
-            <li><a href="#">D2G Wireless</a></li>
-            <li><a href="#">D2G Mobile</a></li>
-            <li><a href="#">Consulting</a></li>
-            <li><a href="#">Telecom</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li {% if page.url == '/d2gwireless/' %}class="active"{% endif %}><a href="/d2gwireless/">D2G Wireless</a></li>
+            <li {% if page.url == '/d2gmobile/' %}class="active"{% endif %}><a href="/d2gmobile/">D2G Mobile</a></li>
+            <li {% if page.url == '/consulting/' %}class="active"{% endif %}><a href="/consulting/">Consulting</a></li>
+            <li {% if page.url == '/telecom/' %}class="active"{% endif %}><a href="/telecom/">Telecom</a></li>
+            <li {% if page.url == '/about/' %}class="active"{% endif %}><a href="/about/">About</a></li>
+            <li {% if page.url == '/contact/' %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
           </ul>
         </nav>
       </div><!-- end container -->
@@ -48,32 +48,33 @@
       <div class="container">
         <nav>
           <a href="/" class="logo"><img src="{{ site.baseurl}}/img/logo.png"></a>
+
+          <aside class="contact-info">
+            <ul>
+              <li><a href="https://www.linkedin.com/company/zirrus-group" class="linkedin" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+              <li><a href="mailto:sales@zirrusgroup.com" target="_blank">sales@zirrusgroup.com</a></li>
+              <li>954-873-6976</li>
+            </ul>
+          </aside><!-- end contact-info -->
+
           <ul>
-            <li><a href="#">D2G Wireless</a></li>
-            <li><a href="#">D2G Mobile</a></li>
-            <li><a href="#">Consulting</a></li>
-            <li><a href="#">Telecom</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li {% if page.url == '/d2gwireless/' %}class="active"{% endif %}><a href="/d2gwireless/">D2G Wireless</a></li>
+            <li {% if page.url == '/d2gmobile/' %}class="active"{% endif %}><a href="/d2gmobile/">D2G Mobile</a></li>
+            <li {% if page.url == '/consulting/' %}class="active"{% endif %}><a href="/consulting/">Consulting</a></li>
+            <li {% if page.url == '/telecom/' %}class="active"{% endif %}><a href="/telecom/">Telecom</a></li>
+            <li {% if page.url == '/about/' %}class="active"{% endif %}><a href="/about/">About</a></li>
+            <li {% if page.url == '/contact/' %}class="active"{% endif %}><a href="/contact/">Contact</a></li>
           </ul>
         </nav>
       </div><!-- end container -->
-      <aside class="social">
-        <ul>
-          <!--
-          <li><a href="#" class="facebook" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-          <li><a href="#" class="twitter" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
-          -->
-          <li><a href="https://www.linkedin.com/company/zirrus-group" class="linkedin" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
-        </ul>
-      </aside>
+
       <aside class="copyright">Copyright &copy; Zirrus Group, LLC {{ site.time | date: "%Y" }} | All Rights Reserved</aside>
     </footer>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{{ site.baseurl}}/js/plugins.js"></script>
+    <script src="{{ site.baseurl}}/js/main.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
