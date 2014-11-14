@@ -132,7 +132,7 @@ hr {
       @include font-2;
       display: inline-block;
       margin: 0 1.5%;
-      font-size: 1.4em;
+      font-size: 1.3em;
       color: $accent-color-1;
       a {
         text-decoration: none;
@@ -322,6 +322,11 @@ header {
   .brand-logo-wrapper {
     @include span-columns(4);
     @include shift(4);
+    img {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+    }
   }
   hr {
     @include span-columns(12);
@@ -340,10 +345,38 @@ header {
     margin-top: 3%;
     margin-bottom: 4%;
   }
-  .btn {
+  .cta {
     @include span-columns(6);
     @include shift(3);
     font-size: 1.3em;
+  }
+  .case-study {
+    @include span-columns(4);
+    @include omega();
+    padding: 2% 2% 1%;
+    border: 3px solid $accent-color-1;
+    .btn {
+      margin-bottom: 5%;
+      font-size: 1.2em;
+      background: $accent-color-1;
+      i {
+        margin-right: 5px;
+        font-size: 1.5em;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+.consulting {
+  h1 {
+    margin-bottom: 5%;
+  }
+  p {
+    @include span-columns(8);
+    @include shift(0);
+  }
+  .cta {
+    margin-top: 5%;
   }
 }
 
@@ -359,20 +392,6 @@ header {
   margin-top: 7%;
   .about-copy {
     @include span-columns(12);
-    .case-study {
-      @include span-columns(4);
-      @include omega();
-      padding: 2%;
-      border: 3px solid $accent-color-1;
-      .btn {
-        margin-bottom: 5%;
-        i {
-          margin-right: 5px;
-          font-size: 1.5em;
-          vertical-align: middle;
-        }
-      }
-    }
     p {
       @include span-columns(8);
       margin-top: 0;
@@ -438,6 +457,13 @@ header {
     margin-top: 5%;
     border-color: #ccc;
     background: url("{{ site.baseurl}}/img/shattered.png");
+  }
+  .contact-info {
+    ul {
+      li {
+        font-size: 1.5em;
+      }
+    }
   }
 }
 
