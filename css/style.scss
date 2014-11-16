@@ -24,14 +24,21 @@
 }
 $accent-color-1: #0D91D9;
 $accent-color-2: #224099;
+@mixin font-1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+@mixin font-2 {
+  font-family: 'Questrial', serif;
+  font-weight: 400;
+}
 .container {
   @include outer-container;
   padding: 0 3%; 
 }
 body {
+  @include font-1;
   font-size: 14px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
   /* RESPONSIVE */
   @include respond-to(768) {
     font-size: 16px;
@@ -56,11 +63,10 @@ h3,
 h4,
 h5,
 h6 {
+  @include font-2;
   margin-bottom: 0;
   line-height: 1.25em;
   color: #222;
-  font-family: 'Bitter', serif;
-  font-weight: 700;
 }
 h1 {
   font-size: 2.5em;
@@ -93,6 +99,7 @@ strong {
   font-weight: 700;
 }
 .btn {
+  @include font-2;
   display: inline-block;
   width: 100%;
   padding: 20px 15px;
@@ -102,8 +109,6 @@ strong {
   color: #fff;
   text-decoration: none;
   font-size: 1.1em;
-  font-family: 'Bitter', serif;
-  font-weight: 700;
   -webkit-font-smoothing: antialiased;
   &:hover {
     @include transition;
@@ -124,11 +129,11 @@ hr {
   ul {
     margin-bottom: 0;
     li {
+      @include font-2;
       display: inline-block;
       margin: 0 1.5%;
-      font-size: 1.4em;
+      font-size: 1.3em;
       color: $accent-color-1;
-      font-family: 'Bitter', serif;
       a {
         text-decoration: none;
         &:hover {
@@ -138,6 +143,7 @@ hr {
       .linkedin {
         font-size: 2em;
         vertical-align: sub;
+        color: #007bb6;
         i {
           vertical-align: middle;
         }
@@ -159,6 +165,7 @@ header {
   background: url("{{ site.baseurl}}/img/shattered.png");
   nav {
     @include span-columns(12);
+    @include font-2;
     .logo {
       @include span-columns(4);
       /* RESPONSIVE */
@@ -207,27 +214,25 @@ header {
         }
         a {
           display: block;
-          padding: 10% 0 9%;
+          padding: 10% 0 4%;
           font-size: 1.1em;
           color: #fff;
           background: #333;
           text-decoration: none;
           &:hover {
-            opacity: .8;
+            color: #000;
+            opacity: 1;
           }  
           /* RESPONSIVE */
           @include respond-to(768) {
             color: $accent-color-1;
             background: inherit;
-            text-decoration: underline;
           }
         }
       }
       .active {
         a {
-          font-weight: 700;
-          border-bottom: 3px solid #fff;
-          text-decoration: none;
+          color: #000;
         }
       }
     }
@@ -293,6 +298,7 @@ header {
       }
       p {
         padding: 0 15%;
+        text-align: left;
         font-size: .95em;
         color: #666;
       }
@@ -317,6 +323,11 @@ header {
   .brand-logo-wrapper {
     @include span-columns(4);
     @include shift(4);
+    img {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+    }
   }
   hr {
     @include span-columns(12);
@@ -325,23 +336,67 @@ header {
   }
   h1 {
     @include span-columns(12);
-    margin-bottom: 0;
+    margin-bottom: 3%;
     margin-top: 0;
     text-align: center;
   }
   p {
     @include span-columns(8);
     @include shift(2);
-    margin-top: 3%;
-    margin-bottom: 4%;
+    margin-top: 0;
   }
-  .btn {
+  .cta {
     @include span-columns(6);
     @include shift(3);
+    margin-top: 2%;
     font-size: 1.3em;
   }
+  .brand-asset {
+    p {
+      @include span-columns(7);
+      @include shift(1);
+      margin-top: 1%;
+      margin-bottom: 4%;
+    }
+    .brand-img {
+      @include span-columns(4);
+      @include omega();
+    }
+    .cta {
+      @include span-columns(9);
+      @include shift(0);
+      margin-top: 5%;
+      font-size: 1.1em;
+    }
+  }
+  .d2g-mobile {
+    img {
+      border: 1px solid #aaa;
+      border-radius: 50%;
+      box-shadow: 0 0 1px #aaa;
+      -webkit-box-shadow: 0 0 1px #aaa;
+    }
+  }
+  .case-study {
+    @include span-columns(12);
+    .case-study-container {
+      @include span-columns(4);
+      @include omega();
+      padding: 2% 2% 1%;
+      border: 3px solid $accent-color-1;
+      .btn {
+        margin-bottom: 5%;
+        font-size: 1.2em;
+        background: $accent-color-1;
+        i {
+          margin-right: 5px;
+          font-size: 1.5em;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
 }
-
 
 
 /* ----------------------------------------
@@ -354,26 +409,21 @@ header {
   margin-top: 7%;
   .about-copy {
     @include span-columns(12);
-    .case-study {
-      @include span-columns(4);
-      @include omega();
-      padding: 2%;
-      border: 3px solid $accent-color-1;
-      .btn {
-        margin-bottom: 5%;
-        i {
-          margin-right: 5px;
-          font-size: 1.5em;
-          vertical-align: middle;
-        }
-      }
-    }
     p {
       @include span-columns(8);
       margin-top: 0;
       margin-bottom: 0;
       font-style: italic;
       color: #999;
+    }
+    a {
+      @include span-columns(4);
+      @include omega();
+      text-align: center;
+      color: #007bb6;
+      i {
+        font-size: 10em;
+      }
     }
   }
   hr {
@@ -394,7 +444,6 @@ header {
           }
         }
         img {
-          display: inline-block;
           border: 1px solid #aaa;
           border-radius: 50%;
           box-shadow: 0 0 1px #aaa;
@@ -434,6 +483,13 @@ header {
     border-color: #ccc;
     background: url("{{ site.baseurl}}/img/shattered.png");
   }
+  .contact-info {
+    ul {
+      li {
+        font-size: 1.5em;
+      }
+    }
+  }
 }
 
 
@@ -450,6 +506,7 @@ footer {
   background: url("{{ site.baseurl}}/img/shattered.png");
   nav {
     @include span-columns(12);
+    @include font-2;
     .logo {
       @include span-columns(4);
       @include shift(4);
@@ -479,6 +536,7 @@ footer {
           display: inline-block;
           padding: 15px 5px;
           font-size: 1.1em;
+          text-decoration: none;
         }
       }
     }
@@ -514,11 +572,11 @@ footer {
   input[type="email"],
   select,
   textarea {
+    @include font-1;
     width: 100%;
     margin-bottom: 7%;
     padding: 10px;
     font-size: 1.1em;
-    font-family: 'Raleway', sans-serif;
     border: 2px solid #ccc;
     color: #666;
     -webkit-box-sizing: border-box;
@@ -534,7 +592,6 @@ footer {
   }
   textarea {
     height: 200px;
-    font-family: 'Raleway', sans-serif;
     font-size: 1em;
     &:focus {
       outline-color: $accent-color-1; 
